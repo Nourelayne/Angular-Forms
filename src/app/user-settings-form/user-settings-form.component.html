@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>User Settings</h2>
+  <form #form = "ngForm" ngNativeValidate>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name" type="text" /> 
+    </div>
+    <div class="form-check">
+      <input id="emailOffers" name="emailOffers" type="checkbox" class="form-check-input" ngModel />
+      <label class="form-check-label" for="emailOffers">Email Special Offers</label>
+    </div>
+    <p>User Interface</p>
+    <div class="form-group">
+        <div class="form-check">
+            <input type="radio" name = "interface"  id="lightInterface" value = "light" checked class="form-check-input" ngModel/>
+            <label for="lightInterface" class = "form-check-label">Light</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name = "interface"  id="mediumInterface" value = "medium" checked class="form-check-input"  ngModel/>
+          <label for="mediumInterface" class = "form-check-label">Medium</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name = "interface"  id="darkInterface" value = "dark" checked class="form-check-input"ngModel />
+        <label for="mediumInterface" class = "form-check-label">Dark</label>
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="subscriptionType">Subscription Type</label>
+        <select  id="subscriptionType" name="subscriptionType" class="form-control" ngModel>
+            <option >Monthly</option>
+            <option>Annual</option>
+            <option >Lifetime</option>
+        </select>
+    </div>
+    <div class="form-group">
+       <label for="notes">Notes</label>
+       <textarea name="notes" id="notes" class="form-control" rows="3" ngModel></textarea>
+    </div>
+    <button class="btn btn-primary">Ok</button>
+  </form>
+</div>
+
+{{userSettings | json}}
